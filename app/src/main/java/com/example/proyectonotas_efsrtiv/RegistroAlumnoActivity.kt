@@ -10,8 +10,6 @@ import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.proyectonotas_efsrtiv.database.DBHelper
 
 class RegistroAlumnoActivity : AppCompatActivity() {
@@ -21,22 +19,28 @@ class RegistroAlumnoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_registro_alumno)
 
         val dbHelper = DBHelper(this)
-        val BRegresar=findViewById<ImageButton>(R.id.BtRegresar)
+        val BRegresar = findViewById<ImageButton>(R.id.BtRegresar)
         val spinner = findViewById<Spinner>(R.id.spinner)
-        val carrera = listOf("COMPUTACION INFORMATICA", "SEGURIDAD INFORMATICA", "BIG DATA", "ADMINISTRACION DE REDES")
+        val carrera = listOf(
+            "COMPUTACION INFORMATICA",
+            "SEGURIDAD INFORMATICA",
+            "BIG DATA",
+            "ADMINISTRACION DE REDES"
+        )
         val botonCrear = findViewById<Button>(R.id.BtCrear)
 
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, carrera)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner.adapter = adapter
 
-        botonCrear.setOnClickListener{
+        botonCrear.setOnClickListener {
             val documento = findViewById<EditText>(R.id.editTextNumber).text.toString()
             val nombres = findViewById<EditText>(R.id.editTextText2).text.toString()
             val apellidop = findViewById<EditText>(R.id.editTextText3).text.toString()
             val apellidom = findViewById<EditText>(R.id.editTextText4).text.toString()
             val contrasena = findViewById<EditText>(R.id.editTextTextPassword2).text.toString()
-            val repetirContrasena = findViewById<EditText>(R.id.editTextTextPassword3).text.toString()
+            val repetirContrasena =
+                findViewById<EditText>(R.id.editTextTextPassword3).text.toString()
             val carreraSeleccionada = findViewById<Spinner>(R.id.spinner).selectedItem.toString()
 
             if (
@@ -52,7 +56,14 @@ class RegistroAlumnoActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val exito = dbHelper.insertarAlumno(documento, nombres, apellidop, apellidom, carreraSeleccionada, contrasena)
+            val exito = dbHelper.insertarAlumno(
+                documento,
+                nombres,
+                apellidop,
+                apellidom,
+                carreraSeleccionada,
+                contrasena
+            )
 
             if (exito) {
                 Toast.makeText(this, "Alumno registrado correctamente", Toast.LENGTH_SHORT).show()
@@ -65,8 +76,8 @@ class RegistroAlumnoActivity : AppCompatActivity() {
         }
 
 
-        BRegresar.setOnClickListener{
-            val intent= Intent(this,MainActivity::class.java)
+        BRegresar.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }

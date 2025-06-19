@@ -16,14 +16,14 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        val BRegistrar=findViewById<Button>(R.id.BtRegistrar)
+        val BRegistrar = findViewById<Button>(R.id.BtRegistrar)
         val botonIngresar = findViewById<Button>(R.id.BtIngresar)
         val editDocumento = findViewById<EditText>(R.id.editTextText)
         val editContrasena = findViewById<EditText>(R.id.editTextTextPassword)
 
-        BRegistrar.setOnClickListener{
-        val intent=Intent(this,RegistroAlumnoActivity::class.java)
-        startActivity(intent)
+        BRegistrar.setOnClickListener {
+            val intent = Intent(this, RegistroAlumnoActivity::class.java)
+            startActivity(intent)
         }
 
         botonIngresar.setOnClickListener {
