@@ -56,14 +56,16 @@ class RegistroAlumnoActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val exito = dbHelper.insertarAlumno(
-                documento,
-                nombres,
-                apellidop,
-                apellidom,
-                carreraSeleccionada,
-                contrasena
+            val nuevoAlumno = Alumno(
+                documento = documento,
+                nombres = nombres,
+                apellidop = apellidop,
+                apellidom = apellidom,
+                carrera = carreraSeleccionada,
+                contrasena = contrasena
             )
+
+            val exito = dbHelper.insertarAlumno(nuevoAlumno)
 
             if (exito) {
                 Toast.makeText(this, "Alumno registrado correctamente", Toast.LENGTH_SHORT).show()

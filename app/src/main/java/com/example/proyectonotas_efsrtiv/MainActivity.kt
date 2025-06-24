@@ -35,16 +35,31 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val dbHelper = DBHelper(this)
-            val valido = dbHelper.validarLogin(documento, contrasena)
+            if (documento == "admin" && contrasena == "123456") {
 
-            if (valido) {
-                Toast.makeText(this, "Ingreso exitoso", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Bienvenido Administrador", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, ListaAlumnosActivity::class.java)
+                startActivity(intent)
+                finish()
             } else {
-                Toast.makeText(this, "Datos incorrectos", Toast.LENGTH_SHORT).show()
+
+                val dbHelper = DBHelper(this)
+                val valido = dbHelper.validarLogin(documento, contrasena)
+
+                if (valido) {
+                    Toast.makeText(this, "Ingreso exitoso", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, CursosDelAlumnoActivity::class.java)
+                    intent.putExtra("documento", documento)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    Toast.makeText(this, "Datos incorrectos", Toast.LENGTH_SHORT).show()
+                }
             }
         }
-
-
     }
 }
+
+
+
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="lista_cursos">
+        <item>Matematica I</item>
+        <item>Innovacion</item>
+        <item>Desarrollo web</item>
+        <item>Desarrollo movil</item>
+        <item>Seguridad de aplicaciones</item>
+    </string-array>
+</resources>

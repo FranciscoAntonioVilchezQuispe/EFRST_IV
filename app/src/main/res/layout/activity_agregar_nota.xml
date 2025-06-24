@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Nombre del alumno -->
+        <TextView
+            android:id="@+id/textViewNombreAlumno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre del alumno"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:padding="8dp" />
+
+        <!-- Selección del curso -->
+        <Spinner
+            android:id="@+id/spinnerCurso"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp" />
+
+        <!-- Parcial a registrar -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seleccionar parcial:"
+            android:layout_marginTop="16dp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupParcial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioT1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T1" />
+
+            <RadioButton
+                android:id="@+id/radioT2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T2" />
+
+            <RadioButton
+                android:id="@+id/radioFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Final" />
+        </RadioGroup>
+
+        <!-- Asignar nota -->
+        <EditText
+            android:id="@+id/editTextNota"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:inputType="number"
+            android:hint="Asignar nota (1 a 20)"
+            android:layout_marginTop="16dp" />
+
+        <!-- Botón guardar -->
+        <Button
+            android:id="@+id/btnGuardarNota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar Nota"
+            android:layout_marginTop="24dp" />
+        <TextView
+            android:id="@+id/textViewPromedio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Promedio actual: -"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+    </LinearLayout>
+</ScrollView>
