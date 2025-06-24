@@ -241,7 +241,15 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "NotasEstudiantes.d
         return nota
     }
 
-
+    fun existeDocumento(documento: String): Boolean {
+        val db = this.readableDatabase
+        val query = "SELECT * FROM Alumno WHERE documento = ?"
+        val cursor = db.rawQuery(query, arrayOf(documento))
+        val existe = cursor.count > 0
+        cursor.close()
+        db.close()
+        return existe
+    }
 
 
 }

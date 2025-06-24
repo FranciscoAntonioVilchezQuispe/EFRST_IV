@@ -7,5 +7,5 @@ data class CursoConNotas(
     val t1: Int?,
     val t2: Int?,
     val final: Int?,
-    val promedio: Double?
+    val promedio: Double? = 0.0
 )

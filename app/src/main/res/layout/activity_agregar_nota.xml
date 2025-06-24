@@ -1,89 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:background="@drawable/gradient_background">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:elevation="12dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Nombre del alumno -->
-        <TextView
-            android:id="@+id/textViewNombreAlumno"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nombre del alumno"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:padding="8dp" />
+            android:layout_height="match_parent"
+            android:padding="16dp">
 
-        <!-- Selección del curso -->
-        <Spinner
-            android:id="@+id/spinnerCurso"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:layout_marginTop="16dp" />
-
-        <!-- Parcial a registrar -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Seleccionar parcial:"
-            android:layout_marginTop="16dp"
-            android:textStyle="bold" />
-
-        <RadioGroup
-            android:id="@+id/radioGroupParcial"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/radioT1"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="T1" />
+                android:orientation="vertical">
 
-            <RadioButton
-                android:id="@+id/radioT2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="T2" />
+                <!-- Nombre del alumno -->
+                <TextView
+                    android:id="@+id/textViewNombreAlumno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre del alumno"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:padding="8dp" />
 
-            <RadioButton
-                android:id="@+id/radioFinal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Final" />
-        </RadioGroup>
+                <!-- Selección del curso -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilCurso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="Curso"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxStrokeColor="@color/primary_color"
+                    app:hintTextColor="@color/primary_color"
+                    app:startIconDrawable="@drawable/ic_school"
+                    app:startIconTint="@color/primary_color">
 
-        <!-- Asignar nota -->
-        <EditText
-            android:id="@+id/editTextNota"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:inputType="number"
-            android:hint="Asignar nota (1 a 20)"
-            android:layout_marginTop="16dp" />
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spinnerCurso"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Botón guardar -->
-        <Button
-            android:id="@+id/btnGuardarNota"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Guardar Nota"
-            android:layout_marginTop="24dp" />
-        <TextView
-            android:id="@+id/textViewPromedio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Promedio actual: -"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:gravity="center" />
+                <!-- Parcial a registrar -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Seleccionar parcial:"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="16sp"
+                    android:layout_marginTop="16dp"
+                    android:textStyle="bold" />
 
-    </LinearLayout>
-</ScrollView>
+                <RadioGroup
+                    android:id="@+id/radioGroupParcial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <RadioButton
+                        android:id="@+id/radioT1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="T1"
+                        android:textColor="@color/text_primary"/>
+
+                    <RadioButton
+                        android:id="@+id/radioT2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="T2"
+                        android:textColor="@color/text_primary"/>
+
+                    <RadioButton
+                        android:id="@+id/radioFinal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Final"
+                        android:textColor="@color/text_primary"/>
+                </RadioGroup>
+
+                <!-- Asignar nota -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilNota"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="Asignar nota (1 a 20)"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxStrokeColor="@color/primary_color"
+                    app:hintTextColor="@color/primary_color"
+                    app:startIconDrawable="@drawable/ic_grade"
+                    app:startIconTint="@color/primary_color">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextNota"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:textColor="@color/text_primary"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Botón guardar -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnGuardarNota"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="24dp"
+                    android:backgroundTint="@color/primary_color"
+                    android:text="GUARDAR NOTA"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    app:cornerRadius="28dp"
+                    app:elevation="6dp"
+                    app:icon="@drawable/ic_save"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    app:iconTint="@android:color/white"/>
+
+                <TextView
+                    android:id="@+id/textViewPromedio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Promedio actual: -"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+            </LinearLayout>
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Texto de pie de página -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:alpha="0.7"
+        android:fontFamily="sans-serif-light"
+        android:text="© 2025 Sistema Educativo"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

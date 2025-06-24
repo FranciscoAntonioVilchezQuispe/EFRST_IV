@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Colores principales -->
+    <color name="primary_color">#3F51B5</color>
+    <color name="primary_dark">#303F9F</color>
+    <color name="primary_light">#C5CAE9</color>
+    <color name="accent_color">#FF4081</color>
+
+    <!-- Colores de texto -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#BDBDBD</color>
+
+    <!-- Colores de fondo -->
+    <color name="background_light">#FAFAFA</color>
+    <color name="surface_color">#FFFFFF</color>
+
+    <!-- Colores del gradiente -->
+    <color name="gradient_start">#667eea</color>
+    <color name="gradient_end">#764ba2</color>
 </resources>

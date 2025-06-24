@@ -17,9 +17,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val BRegistrar = findViewById<Button>(R.id.BtRegistrar)
-        val botonIngresar = findViewById<Button>(R.id.BtIngresar)
+        val botonIngresar = findViewById<Button>(R.id.btnLogin)
         val editDocumento = findViewById<EditText>(R.id.editTextText)
-        val editContrasena = findViewById<EditText>(R.id.editTextTextPassword)
+        val editContrasena = findViewById<EditText>(R.id.etPassword)
 
         BRegistrar.setOnClickListener {
             val intent = Intent(this, RegistroAlumnoActivity::class.java)

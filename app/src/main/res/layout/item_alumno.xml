@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginVertical="8dp"
-    android:layout_marginHorizontal="12dp"
-    card_view:cardCornerRadius="12dp"
-    card_view:cardElevation="4dp">
+    android:layout_marginHorizontal="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@android:color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,9 +21,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nombre Apellido"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="#333333" />
+            android:textColor="@color/primary_dark" />
 
         <TextView
             android:id="@+id/textViewCodigo"
@@ -37,14 +39,22 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="end"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="12dp">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAgregarNotas"
+                style="@style/Widget.Material3.Button.OutlinedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Agregar Notas" />
+                android:text="Agregar Notas"
+                android:textColor="@color/primary_color"
+                app:cornerRadius="16dp"
+                app:icon="@drawable/ic_edit"
+                app:iconGravity="textStart"
+                app:iconPadding="4dp"
+                app:iconTint="@color/primary_color"
+                app:strokeColor="@color/primary_color"
+                app:strokeWidth="1dp" />
         </LinearLayout>
     </LinearLayout>
-
 </androidx.cardview.widget.CardView>
